@@ -10,6 +10,6 @@ TODO
 
 TODO
 
-# License
+---
 
-MIT
+Licensed under MIT
