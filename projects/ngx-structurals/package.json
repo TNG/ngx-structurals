@@ -1,0 +1,17 @@
+{
+  "name": "ngx-structurals",
+  "version": "0.0.1",
+  "description": "Awesome and helpful structural directives for Angular",
+  "author": "Ingo Bürk",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "directive",
+    "structural-directive",
+    "web"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^7.0.0 || ^8.0.0",
+    "@angular/core": "^7.0.0 || ^8.0.0"
+  }
+}

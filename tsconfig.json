@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-structurals": [
+        "dist/ngx-structurals"
+      ],
+      "ngx-structurals/*": [
+        "dist/ngx-structurals/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

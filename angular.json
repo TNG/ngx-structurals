@@ -2,5 +2,41 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "ngx-structurals": {
+      "projectType": "library",
+      "root": "projects/ngx-structurals",
+      "sourceRoot": "projects/ngx-structurals/src",
+      "prefix": "ngx",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-structurals/tsconfig.lib.json",
+            "project": "projects/ngx-structurals/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-structurals/src/test.ts",
+            "tsConfig": "projects/ngx-structurals/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-structurals/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-structurals/tsconfig.lib.json",
+              "projects/ngx-structurals/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "ngx-structurals"
 }
