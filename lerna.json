@@ -1,0 +1,15 @@
+{
+  "packages": [
+    "projects/*"
+  ],
+  "version": "independent",
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "message": "release: new release"
+    },
+    "version": {
+      "push": false
+    }
+  }
+}
