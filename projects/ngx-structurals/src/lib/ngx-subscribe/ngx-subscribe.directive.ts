@@ -54,14 +54,14 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
 
     private context = new NgxRxSubscribeContext<T>();
 
-    private templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
-    private viewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
-    private pendingTemplateRef: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
-    private pendingViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
-    private errorTemplateRef: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
-    private errorViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
-    private completeTemplateRef: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
-    private completeViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
+    private thenTemplateRef: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
+    private thenViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
+    private beforeAnyTemplate: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
+    private beforeAnyViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
+    private onErrorTemplateRef: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
+    private onErrorViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
+    private onCompletedTemplateRef: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
+    private onCompletedViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
 
     private source$: Observable<T>;
     private subscription: Subscription;
@@ -74,10 +74,10 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
             throw new Error(`[ngxSubscribe] can only be used as a structural directive or on an ng-template.`);
         }
 
-        this.templateRef = templateRef;
-        this.pendingTemplateRef = templateRef;
-        this.errorTemplateRef = templateRef;
-        this.completeTemplateRef = templateRef;
+        this.thenTemplateRef = templateRef;
+        this.beforeAnyTemplate = templateRef;
+        this.onErrorTemplateRef = templateRef;
+        this.onCompletedTemplateRef = templateRef;
     }
 
     /**
@@ -127,9 +127,9 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * Defines the template to be shown when the observable emits a value.
      */
     @Input()
-    public set ngxSubscribeTemplate(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
-        this.templateRef = templateRef;
-        this.viewRef = null;
+    public set ngxSubscribeThen(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
+        this.thenTemplateRef = templateRef;
+        this.thenViewRef = null;
         this.updateView();
     }
 
@@ -141,9 +141,9 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
-    public set ngxSubscribePendingTemplate(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
-        this.pendingTemplateRef = templateRef;
-        this.pendingViewRef = null;
+    public set ngxSubscribeBeforeAny(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
+        this.beforeAnyTemplate = templateRef;
+        this.beforeAnyViewRef = null;
         this.updateView();
     }
 
@@ -155,9 +155,9 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
-    public set ngxSubscribeErrorTemplate(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
-        this.errorTemplateRef = templateRef;
-        this.errorViewRef = null;
+    public set ngxSubscribeOnError(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
+        this.onErrorTemplateRef = templateRef;
+        this.onErrorViewRef = null;
         this.updateView();
     }
 
@@ -169,9 +169,9 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
-    public set ngxSubscribeCompleteTemplate(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
-        this.completeTemplateRef = templateRef;
-        this.completeViewRef = null;
+    public set ngxSubscribeOnCompleted(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
+        this.onCompletedTemplateRef = templateRef;
+        this.onCompletedViewRef = null;
         this.updateView();
     }
 
@@ -186,31 +186,31 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
 
     private updateView(): void {
         if (this.context.completed) {
-            if (!this.completeViewRef) {
+            if (!this.onCompletedViewRef) {
                 this.clearViewRefs();
-                if (this.completeTemplateRef) {
-                    this.completeViewRef = this.viewContainer.createEmbeddedView(this.completeTemplateRef, this.context);
+                if (this.onCompletedTemplateRef) {
+                    this.onCompletedViewRef = this.viewContainer.createEmbeddedView(this.onCompletedTemplateRef, this.context);
                 }
             }
         } else if (this.context.errored) {
-            if (!this.errorViewRef) {
+            if (!this.onErrorViewRef) {
                 this.clearViewRefs();
-                if (this.errorTemplateRef) {
-                    this.errorViewRef = this.viewContainer.createEmbeddedView(this.errorTemplateRef, this.context);
+                if (this.onErrorTemplateRef) {
+                    this.onErrorViewRef = this.viewContainer.createEmbeddedView(this.onErrorTemplateRef, this.context);
                 }
             }
         } else if (this.context.count === 0) {
-            if (!this.viewRef) {
+            if (!this.thenViewRef) {
                 this.clearViewRefs();
-                if (this.pendingTemplateRef) {
-                    this.pendingViewRef = this.viewContainer.createEmbeddedView(this.pendingTemplateRef, this.context);
+                if (this.beforeAnyTemplate) {
+                    this.beforeAnyViewRef = this.viewContainer.createEmbeddedView(this.beforeAnyTemplate, this.context);
                 }
             }
         } else {
-            if (!this.viewRef) {
+            if (!this.thenViewRef) {
                 this.clearViewRefs();
-                if (this.templateRef) {
-                    this.viewRef = this.viewContainer.createEmbeddedView(this.templateRef, this.context);
+                if (this.thenTemplateRef) {
+                    this.thenViewRef = this.viewContainer.createEmbeddedView(this.thenTemplateRef, this.context);
                 }
             }
         }
@@ -219,9 +219,9 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
     private clearViewRefs(): void {
         this.viewContainer.clear();
 
-        this.viewRef = null;
-        this.errorViewRef = null;
-        this.completeViewRef = null;
+        this.thenViewRef = null;
+        this.onErrorViewRef = null;
+        this.onCompletedViewRef = null;
     }
 
 }

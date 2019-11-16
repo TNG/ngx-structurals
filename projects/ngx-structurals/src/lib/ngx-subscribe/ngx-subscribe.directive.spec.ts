@@ -111,7 +111,7 @@ describe('ngxSubscribe', () => {
         @Component({
             template: `
                 <div>
-                    <ng-template [ngxSubscribe]="source$" [ngxSubscribePendingTemplate]="pendingTemplate"></ng-template>
+                    <ng-template [ngxSubscribe]="source$" [ngxSubscribeBeforeAny]="pendingTemplate"></ng-template>
                     <ng-template #pendingTemplate>Pending</ng-template>
                 </div>
             `,
@@ -132,7 +132,7 @@ describe('ngxSubscribe', () => {
         @Component({
             template: `
                 <div>
-                    <ng-template [ngxSubscribe]="source$" [ngxSubscribeErrorTemplate]="errorTemplate"></ng-template>
+                    <ng-template [ngxSubscribe]="source$" [ngxSubscribeOnError]="errorTemplate"></ng-template>
                     <ng-template #errorTemplate>Error</ng-template>
                 </div>
             `,
@@ -153,7 +153,7 @@ describe('ngxSubscribe', () => {
         @Component({
             template: `
                 <div>
-                    <ng-template [ngxSubscribe]="source$" [ngxSubscribeCompleteTemplate]="completionTemplate"></ng-template>
+                    <ng-template [ngxSubscribe]="source$" [ngxSubscribeOnCompleted]="completionTemplate"></ng-template>
                     <ng-template #completionTemplate>Completed</ng-template>
                 </div>
             `,
