@@ -70,7 +70,7 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
         private readonly viewContainer: ViewContainerRef,
         @Optional() templateRef: TemplateRef<NgxRxSubscribeContext<T>>,
     ) {
-        if (!this.templateRef) {
+        if (!templateRef) {
             throw new Error(`[ngxSubscribe] can only be used as a structural directive or on an ng-template.`);
         }
 
