@@ -10,6 +10,22 @@ TODO
 
 # How to use it?
 
+<!--ts-->
+    * [*ngxSubscribe](#ngxSubscribe)
+    * [*ngxRepeat](#ngxRepeat)
+    * [*ngxRange](#ngxRange)
+<!--te-->
+
+## *ngxSubscribe
+
+TODO
+
+## *ngxRepeat
+
+TODO
+
+## *ngxRange
+
 TODO
 
 ---
