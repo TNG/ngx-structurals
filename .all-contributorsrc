@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "Airblader",
+      "name": "Ingo Bürk",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2392216?v=4",
+      "profile": "https://github.com/Airblader",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "ngx-structurals",
+  "projectOwner": "Airblader",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
