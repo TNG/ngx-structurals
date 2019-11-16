@@ -1,4 +1,4 @@
-import { Directive, EmbeddedViewRef, Input, OnDestroy, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, EmbeddedViewRef, Input, OnDestroy, Optional, TemplateRef, ViewContainerRef } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 
 /**
@@ -68,8 +68,12 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
 
     constructor(
         private readonly viewContainer: ViewContainerRef,
-        templateRef: TemplateRef<NgxRxSubscribeContext<T>>,
+        @Optional() templateRef: TemplateRef<NgxRxSubscribeContext<T>>,
     ) {
+        if (!this.templateRef) {
+            throw new Error(`[ngxSubscribe] can only be used as a structural directive or on an ng-template.`);
+        }
+
         this.templateRef = templateRef;
         this.pendingTemplateRef = templateRef;
         this.errorTemplateRef = templateRef;
