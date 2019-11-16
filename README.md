@@ -35,12 +35,7 @@ TODO
 
 TODO
 
----
-
-[MIT License][license]
-
-[license]: https://www.github.com/Airblader/ngx-structurals/blob/master/LICENSE
-## Contributors ✨
+# Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
@@ -55,3 +50,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+---
+
+[MIT License][license]
+
+[license]: https://www.github.com/Airblader/ngx-structurals/blob/master/LICENSE
