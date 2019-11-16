@@ -138,7 +138,6 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      *
      * Defines the template to be shown before the observable has either emitted a value, errored or completed.
      * If not specified, this defaults to the template on which the directive has been applied.
-     * TODO: Should this default to the "value template" instead?
      * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
@@ -153,7 +152,6 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      *
      * Defines the template to be shown in case the observable has errored.
      * If not specified, this defaults to the template on which the directive has been applied.
-     * TODO: Should this default to the "value template" instead?
      * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
@@ -168,7 +166,6 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      *
      * Defines the template to be shown in case the observable completed.
      * If not specified, this defaults to the template on which the directive has been applied.
-     * TODO: Should this default to the "value template" instead?
      * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
