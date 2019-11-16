@@ -1,7 +1,7 @@
 {
   "name": "ngx-structurals",
   "version": "0.0.2",
-  "description": "Awesome and helpful structural directives for Angular",
+  "description": "Structural utility directives for Angular",
   "author": "Ingo Bürk",
   "license": "MIT",
   "keywords": [
