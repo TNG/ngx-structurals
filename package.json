@@ -7,6 +7,7 @@
     "build": "ng build",
     "test": "ng test --browsers=ChromeHeadless",
     "lint": "ng lint",
+    "codecov": "codecov",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -34,6 +35,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "codecov": "^3.6.1",
     "codelyzer": "^5.0.0",
     "husky": "^3.0.9",
     "jasmine-core": "~3.4.0",
