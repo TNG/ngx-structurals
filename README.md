@@ -11,9 +11,9 @@ TODO
 # How to use it?
 
 <!--ts-->
-    * [*ngxSubscribe](#ngxSubscribe)
-    * [*ngxRepeat](#ngxRepeat)
-    * [*ngxRange](#ngxRange)
+   * [*ngxSubscribe](#ngxSubscribe)
+   * [*ngxRepeat](#ngxRepeat)
+   * [*ngxRange](#ngxRange)
 <!--te-->
 
 ## *ngxSubscribe
