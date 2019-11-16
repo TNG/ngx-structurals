@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/Airblader/ngx-structurals.svg?branch=master)](https://travis-ci.org/Airblader/ngx-structurals)
+[![Build Status](https://travis-ci.com/Airblader/ngx-structurals.svg?branch=master)](https://travis-ci.com/Airblader/ngx-structurals)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-green.svg)](https://conventionalcommits.org)
 
 # ngx-structurals
