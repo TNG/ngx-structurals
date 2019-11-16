@@ -11,11 +11,11 @@ since they are shipped as built-ins with Angular. However, we are not limited to
 is an often under-appreciate, powerful concept baked into Angular. ngx-structural aims to provide structural directives
 which may be useful in any Angular project.
 
-# How to get it?
+## How to get it?
 
 TODO Installation instructions
 
-# How to use it?
+## How to use it?
 
 <!--ts-->
    * [*ngxSubscribe](#ngxSubscribe)
@@ -23,19 +23,19 @@ TODO Installation instructions
    * [*ngxRange](#ngxRange)
 <!--te-->
 
-## *ngxSubscribe
+### *ngxSubscribe
 
 TODO
 
-## *ngxRepeat
+### *ngxRepeat
 
 TODO
 
-## *ngxRange
+### *ngxRange
 
 TODO
 
-# Contributors ✨
+## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
