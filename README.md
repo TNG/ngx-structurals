@@ -1,6 +1,8 @@
 # ngx-structurals
 
 TODO
+TODO: ngxRepeat / ngxRange
+TODO: ngxAlias
 
 # How to get it?
 

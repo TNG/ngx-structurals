@@ -2,33 +2,50 @@ import { Directive, EmbeddedViewRef, Input, OnDestroy, TemplateRef, ViewContaine
 import { Observable, Subscription } from 'rxjs';
 
 /**
- * TODO Document
+ * Context provided when using the [ngxSubscribe] directive.
  */
 export class NgxRxSubscribeContext<T> {
     /**
-     * TODO Document
+     * The (most recently) emitted value of the bound observable.
+     *
+     * This always keeps the last emitted value of the bound observable and is {@code null} if the observable has not yet emitted.
+     * To distinguish an emitted {@code null} value from this, use the {@link count} context variable.
      */
     public $implicit: T | null = null;
     /**
-     * TODO Document
+     * Whether the bound observable has errored.
+     *
+     * This is {@code true} if and only if the currently bound observable has errored. You can access the error using {@link error}.
      */
     public errored = false;
     /**
-     * TODO Document
+     * Whether the bound observable has completed.
+     *
+     * This is {@code true} if and only if the currently bound observable has completed.
      */
     public completed = false;
     /**
-     * TODO Document
+     * Error thrown by the observable.
+     *
+     * Holds the error thrown by the observable if it has indeed errored. This can be checked using the {@link errored} context member.
+     * Otherwise this holds the value {@code null}.
      */
     public error: any | null = null;
     /**
-     * TODO Document
+     * Number of emitted values.
+     *
+     * This counter increases any time the currently bound observable emits a value.
      */
     public count = 0;
 }
 
 /**
- * TODO Document
+ * Subscribes to a given observable and renders a template.
+ *
+ * You can use the [ngxSubscribe] structural directive to subscribe to an observable directly from the template of your Angular component.
+ * Using the provided context information you have access to all important information. You can also define different templates to be
+ * rendered depending on whether the observable has (not yet) emitted, errored or completed.
+ *
  */
 @Directive({
     selector: '[ngxSubscribe]',
