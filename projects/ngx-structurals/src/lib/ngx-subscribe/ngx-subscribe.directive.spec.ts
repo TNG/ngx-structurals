@@ -107,6 +107,27 @@ describe('ngxSubscribe', () => {
         expect(getTarget().textContent.trim()).toBe('true');
     }));
 
+    it('can display a different template', async(async () => {
+        @Component({
+            template: `
+                <div>
+                    <ng-template [ngxSubscribe]="source$" [ngxSubscribeThen]="thenTemplate">Pending</ng-template>
+                    <ng-template #thenTemplate let-value>{{ value }}</ng-template>
+                </div>
+            `,
+        })
+        class TestComponent {
+            public source$ = new Subject<number>();
+        }
+
+        const [fixture, getTarget] = setupComponent(TestComponent, 'div');
+        expect(getTarget().textContent).toBe('Pending');
+
+        fixture.componentInstance.source$.next(42);
+        fixture.detectChanges();
+        expect(getTarget().textContent).toBe('42');
+    }));
+
     it('can display a different template if no value has been emitted yet', async(async () => {
         @Component({
             template: `
