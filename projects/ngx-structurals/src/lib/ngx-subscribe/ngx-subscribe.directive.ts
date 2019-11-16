@@ -77,7 +77,9 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
     }
 
     /**
-     * TODO Document
+     * Observable to subscribe to.
+     *
+     * This is the primary input for the {@code [ngxSubscribe]} directive and defines the observable which should be subscribed to.
      */
     @Input()
     public set ngxSubscribe(source$: Observable<T>) {
@@ -116,7 +118,9 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
     }
 
     /**
-     * TODO Document
+     * Template to show for emitted values.
+     *
+     * Defines the template to be shown when the observable emits a value.
      */
     @Input()
     public set ngxSubscribeTemplate(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
@@ -126,7 +130,12 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
     }
 
     /**
-     * TODO Document
+     * Template to show while observable has not emitted, errored or completed.
+     *
+     * Defines the template to be shown before the observable has either emitted a value, errored or completed.
+     * If not specified, this defaults to the template on which the directive has been applied.
+     * TODO: Should this default to the "value template" instead?
+     * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
     public set ngxSubscribePendingTemplate(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
@@ -136,7 +145,12 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
     }
 
     /**
-     * TODO Document
+     * Template to show if the observable errored.
+     *
+     * Defines the template to be shown in case the observable has errored.
+     * If not specified, this defaults to the template on which the directive has been applied.
+     * TODO: Should this default to the "value template" instead?
+     * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
     public set ngxSubscribeErrorTemplate(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
@@ -146,7 +160,12 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
     }
 
     /**
-     * TODO Document
+     * Template to show if the observable completed.
+     *
+     * Defines the template to be shown in case the observable completed.
+     * If not specified, this defaults to the template on which the directive has been applied.
+     * TODO: Should this default to the "value template" instead?
+     * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
     public set ngxSubscribeCompleteTemplate(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
@@ -155,6 +174,9 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
         this.updateView();
     }
 
+    /**
+     * @internal
+     */
     public ngOnDestroy(): void {
         if (this.subscription) {
             this.subscription.unsubscribe();
