@@ -138,7 +138,6 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      *
      * Defines the template to be shown before the observable has either emitted a value, errored or completed.
      * If not specified, this defaults to the template on which the directive has been applied.
-     * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
     public set ngxSubscribeBeforeAny(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
@@ -152,7 +151,6 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      *
      * Defines the template to be shown in case the observable has errored.
      * If not specified, this defaults to the template on which the directive has been applied.
-     * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
     public set ngxSubscribeOnError(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
@@ -166,7 +164,6 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      *
      * Defines the template to be shown in case the observable completed.
      * If not specified, this defaults to the template on which the directive has been applied.
-     * TODO: Introduce shorter alias for non-structural usage?
      */
     @Input()
     public set ngxSubscribeOnCompleted(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
