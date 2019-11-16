@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Airblader/ngx-structurals.svg?branch=master)](https://travis-ci.org/Airblader/ngx-structurals)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-green.svg)](https://conventionalcommits.org)
+
 # ngx-structurals
 
 Structural utility directives for Angular.
@@ -33,4 +36,6 @@ TODO
 
 ---
 
-MIT License
+[MIT License][license]
+
+[license]: https://www.github.com/Airblader/ngx-structurals/blob/master/LICENSE
