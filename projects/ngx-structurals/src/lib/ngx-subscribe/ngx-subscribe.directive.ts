@@ -3,6 +3,8 @@ import { Observable, Subscription } from 'rxjs';
 
 /**
  * Context provided when using the [ngxSubscribe] directive.
+ *
+ * @publicApi
  */
 export class NgxRxSubscribeContext<T> {
     /**
@@ -10,18 +12,24 @@ export class NgxRxSubscribeContext<T> {
      *
      * This always keeps the last emitted value of the bound observable and is {@code null} if the observable has not yet emitted.
      * To distinguish an emitted {@code null} value from this, use the {@link count} context variable.
+     *
+     * @publicApi
      */
     public $implicit: T | null = null;
     /**
      * Whether the bound observable has errored.
      *
      * This is {@code true} if and only if the currently bound observable has errored. You can access the error using {@link error}.
+     *
+     * @publicApi
      */
     public errored = false;
     /**
      * Whether the bound observable has completed.
      *
      * This is {@code true} if and only if the currently bound observable has completed.
+     *
+     * @publicApi
      */
     public completed = false;
     /**
@@ -29,12 +37,16 @@ export class NgxRxSubscribeContext<T> {
      *
      * Holds the error thrown by the observable if it has indeed errored. This can be checked using the {@link errored} context member.
      * Otherwise this holds the value {@code null}.
+     *
+     * @publicApi
      */
     public error: any | null = null;
     /**
      * Number of emitted values.
      *
      * This counter increases any time the currently bound observable emits a value.
+     *
+     * @publicApi
      */
     public count = 0;
 }
@@ -46,6 +58,7 @@ export class NgxRxSubscribeContext<T> {
  * Using the provided context information you have access to all important information. You can also define different templates to be
  * rendered depending on whether the observable has (not yet) emitted, errored or completed.
  *
+ * @publicApi
  */
 @Directive({
     selector: '[ngxSubscribe]',
@@ -84,6 +97,8 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * Observable to subscribe to.
      *
      * This is the primary input for the {@code [ngxSubscribe]} directive and defines the observable which should be subscribed to.
+     *
+     * @publicApi
      */
     @Input()
     public set ngxSubscribe(source$: Observable<T>) {
@@ -125,6 +140,8 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * Template to show for emitted values.
      *
      * Defines the template to be shown when the observable emits a value.
+     *
+     * @publicApi
      */
     @Input()
     public set ngxSubscribeThen(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
@@ -138,6 +155,8 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      *
      * Defines the template to be shown before the observable has either emitted a value, errored or completed.
      * If not specified, this defaults to the template on which the directive has been applied.
+     *
+     * @publicApi
      */
     @Input()
     public set ngxSubscribeBeforeAny(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
@@ -151,6 +170,8 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      *
      * Defines the template to be shown in case the observable has errored.
      * If not specified, this defaults to the template on which the directive has been applied.
+     *
+     * @publicApi
      */
     @Input()
     public set ngxSubscribeOnError(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
@@ -164,6 +185,8 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      *
      * Defines the template to be shown in case the observable completed.
      * If not specified, this defaults to the template on which the directive has been applied.
+     *
+     * @publicApi
      */
     @Input()
     public set ngxSubscribeOnCompleted(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
