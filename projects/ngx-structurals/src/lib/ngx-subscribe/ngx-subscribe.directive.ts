@@ -6,7 +6,7 @@ import { Observable, Subscription } from 'rxjs';
  *
  * @publicApi
  */
-export class NgxRxSubscribeContext<T> {
+export class NgxSubscribeContext<T> {
     /**
      * The (most recently) emitted value of the bound observable.
      *
@@ -65,23 +65,23 @@ export class NgxRxSubscribeContext<T> {
 })
 export class NgxSubscribeDirective<T> implements OnDestroy {
 
-    private context = new NgxRxSubscribeContext<T>();
+    private context = new NgxSubscribeContext<T>();
 
-    private thenTemplateRef: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
-    private thenViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
-    private beforeAnyTemplate: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
-    private beforeAnyViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
-    private onErrorTemplateRef: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
-    private onErrorViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
-    private onCompletedTemplateRef: TemplateRef<NgxRxSubscribeContext<T>> | null = null;
-    private onCompletedViewRef: EmbeddedViewRef<NgxRxSubscribeContext<T>> | null = null;
+    private thenTemplateRef: TemplateRef<NgxSubscribeContext<T>> | null = null;
+    private thenViewRef: EmbeddedViewRef<NgxSubscribeContext<T>> | null = null;
+    private beforeAnyTemplate: TemplateRef<NgxSubscribeContext<T>> | null = null;
+    private beforeAnyViewRef: EmbeddedViewRef<NgxSubscribeContext<T>> | null = null;
+    private onErrorTemplateRef: TemplateRef<NgxSubscribeContext<T>> | null = null;
+    private onErrorViewRef: EmbeddedViewRef<NgxSubscribeContext<T>> | null = null;
+    private onCompletedTemplateRef: TemplateRef<NgxSubscribeContext<T>> | null = null;
+    private onCompletedViewRef: EmbeddedViewRef<NgxSubscribeContext<T>> | null = null;
 
     private source$: Observable<T>;
     private subscription: Subscription;
 
     constructor(
         private readonly viewContainer: ViewContainerRef,
-        @Optional() templateRef: TemplateRef<NgxRxSubscribeContext<T>>,
+        @Optional() templateRef: TemplateRef<NgxSubscribeContext<T>>,
     ) {
         if (!templateRef) {
             throw new Error(`[ngxSubscribe] can only be used as a structural directive or on an ng-template.`);
@@ -110,7 +110,7 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
             this.subscription.unsubscribe();
             this.subscription = null;
 
-            this.context = new NgxRxSubscribeContext<T>();
+            this.context = new NgxSubscribeContext<T>();
             this.clearViewRefs();
         }
 
@@ -144,7 +144,7 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * @publicApi
      */
     @Input()
-    public set ngxSubscribeThen(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
+    public set ngxSubscribeThen(templateRef: TemplateRef<NgxSubscribeContext<T>> | null) {
         this.thenTemplateRef = templateRef;
         this.thenViewRef = null;
         this.updateView();
@@ -159,7 +159,7 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * @publicApi
      */
     @Input()
-    public set ngxSubscribeBeforeAny(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
+    public set ngxSubscribeBeforeAny(templateRef: TemplateRef<NgxSubscribeContext<T>> | null) {
         this.beforeAnyTemplate = templateRef;
         this.beforeAnyViewRef = null;
         this.updateView();
@@ -174,7 +174,7 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * @publicApi
      */
     @Input()
-    public set ngxSubscribeOnError(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
+    public set ngxSubscribeOnError(templateRef: TemplateRef<NgxSubscribeContext<T>> | null) {
         this.onErrorTemplateRef = templateRef;
         this.onErrorViewRef = null;
         this.updateView();
@@ -189,7 +189,7 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * @publicApi
      */
     @Input()
-    public set ngxSubscribeOnCompleted(templateRef: TemplateRef<NgxRxSubscribeContext<T>> | null) {
+    public set ngxSubscribeOnCompleted(templateRef: TemplateRef<NgxSubscribeContext<T>> | null) {
         this.onCompletedTemplateRef = templateRef;
         this.onCompletedViewRef = null;
         this.updateView();
