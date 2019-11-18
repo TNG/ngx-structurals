@@ -93,6 +93,11 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
         this.onCompletedTemplateRef = templateRef;
     }
 
+    /** @internal */
+    public static ngTemplateContextGuard<T>(dir: NgxSubscribeDirective<T>, ctx: unknown): ctx is NgxSubscribeContext<T> {
+        return true;
+    }
+
     /**
      * Observable to subscribe to.
      *
@@ -195,9 +200,7 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
         this.updateView();
     }
 
-    /**
-     * @internal
-     */
+    /** @internal */
     public ngOnDestroy(): void {
         if (this.subscription) {
             this.subscription.unsubscribe();

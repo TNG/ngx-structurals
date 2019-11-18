@@ -90,6 +90,11 @@ export class NgxRepeatDirective {
         }
     }
 
+    /** @internal */
+    public static ngTemplateContextGuard(dir: NgxRepeatDirective, ctx: unknown): ctx is NgxRepeatContext {
+        return true;
+    }
+
     /**
      * Defines how often the template should be rendered.
      *

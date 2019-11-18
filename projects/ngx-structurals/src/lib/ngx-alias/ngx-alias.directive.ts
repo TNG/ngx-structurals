@@ -15,9 +15,7 @@ export class NgxAliasContext<T> {
      */
     public ngxAlias: T;
 
-    /**
-     * @internal
-     */
+    /** @internal */
     constructor(ngxAlias: T) {
         this.ngxAlias = ngxAlias;
     }
@@ -45,6 +43,11 @@ export class NgxAliasDirective<T> {
         if (!this.templateRef) {
             throw new Error(`[ngxAlias] can only be used as a structural directive or on an ng-template.`);
         }
+    }
+
+    /** @internal */
+    public static ngTemplateContextGuard<T>(dir: NgxAliasDirective<T>, ctx: unknown): ctx is NgxAliasContext<T> {
+        return true;
     }
 
     /**
