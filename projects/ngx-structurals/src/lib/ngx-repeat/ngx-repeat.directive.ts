@@ -81,17 +81,13 @@ export class NgxRepeatContext {
 })
 export class NgxRepeatDirective {
 
-    private templateRef: TemplateRef<NgxRepeatContext> | null = null;
-
     constructor(
         private readonly viewContainer: ViewContainerRef,
-        @Optional() templateRef: TemplateRef<NgxRepeatContext>,
+        @Optional() private readonly templateRef: TemplateRef<NgxRepeatContext>,
     ) {
-        if (!templateRef) {
+        if (!this.templateRef) {
             throw new Error(`[ngxRepeat] can only be used as a structural directive or on an ng-template.`);
         }
-
-        this.templateRef = templateRef;
     }
 
     /**

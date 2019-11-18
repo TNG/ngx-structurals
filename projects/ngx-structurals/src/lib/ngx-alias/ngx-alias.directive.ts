@@ -14,6 +14,13 @@ export class NgxAliasContext<T> {
      * @publicApi
      */
     public ngxAlias: T;
+
+    /**
+     * @internal
+     */
+    constructor(ngxAlias: T) {
+        this.ngxAlias = ngxAlias;
+    }
 }
 
 /**
@@ -56,9 +63,7 @@ export class NgxAliasDirective<T> {
     private updateView(): void {
         this.viewContainer.clear();
 
-        const context = new NgxAliasContext();
-        context.ngxAlias = this.expression;
-        this.viewContainer.createEmbeddedView(this.templateRef, context);
+        this.viewContainer.createEmbeddedView(this.templateRef, new NgxAliasContext(this.expression));
     }
 
 }

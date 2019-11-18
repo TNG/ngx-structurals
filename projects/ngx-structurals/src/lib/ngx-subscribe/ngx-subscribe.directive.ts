@@ -76,8 +76,8 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
     private onCompletedTemplateRef: TemplateRef<NgxSubscribeContext<T>> | null = null;
     private onCompletedViewRef: EmbeddedViewRef<NgxSubscribeContext<T>> | null = null;
 
-    private source$: Observable<T>;
-    private subscription: Subscription;
+    private source$: Observable<T> | null = null;
+    private subscription: Subscription | null = null;
 
     constructor(
         private readonly viewContainer: ViewContainerRef,
