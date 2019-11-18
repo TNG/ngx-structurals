@@ -1,4 +1,4 @@
-import { Directive, Input, Optional, TemplateRef, ViewContainerRef } from '@angular/core';
+import { Directive, Input, OnInit, Optional, TemplateRef, ViewContainerRef } from '@angular/core';
 
 /**
  * Context provided when using the [ngxAlias] directive.
@@ -13,11 +13,15 @@ export class NgxAliasContext<T> {
      *
      * @publicApi
      */
-    public ngxAlias: T;
+    public ngxAlias: T | null = null;
 
-    /** @internal */
-    constructor(ngxAlias: T) {
-        this.ngxAlias = ngxAlias;
+    /**
+     * Synonym for {@link ngxAlias}.
+     *
+     * @publicApi
+     */
+    public get $implicit(): T | null {
+        return this.ngxAlias;
     }
 }
 
@@ -32,9 +36,9 @@ export class NgxAliasContext<T> {
 @Directive({
     selector: '[ngxAlias]',
 })
-export class NgxAliasDirective<T> {
+export class NgxAliasDirective<T> implements OnInit {
 
-    private expression?: T;
+    private readonly context = new NgxAliasContext();
 
     constructor(
         private readonly viewContainer: ViewContainerRef,
@@ -50,6 +54,10 @@ export class NgxAliasDirective<T> {
         return true;
     }
 
+    public ngOnInit(): void {
+        this.viewContainer.createEmbeddedView(this.templateRef, this.context);
+    }
+
     /**
      * Expression to alias.
      *
@@ -57,16 +65,7 @@ export class NgxAliasDirective<T> {
      */
     @Input()
     public set ngxAlias(expression: T) {
-        if (expression !== this.expression) {
-            this.expression = expression;
-            this.updateView();
-        }
-    }
-
-    private updateView(): void {
-        this.viewContainer.clear();
-
-        this.viewContainer.createEmbeddedView(this.templateRef, new NgxAliasContext(this.expression));
+        this.context.ngxAlias = expression;
     }
 
 }
