@@ -20,7 +20,7 @@ TODO Installation instructions
 <!--ts-->
    * [*ngxSubscribe](#ngxSubscribe)
    * [*ngxRepeat](#ngxRepeat)
-   * [*ngxRange](#ngxRange)
+   * [*ngxAlias](#ngxAlias)
 <!--te-->
 
 ### *ngxSubscribe
@@ -34,7 +34,8 @@ TODO Installation instructions
 </ng-container>
 ```
 
-You can subscribe to an observable directly from the template using `*ngxSubscribe`. While you can achieve the same thing using `*ngIf="data$ | async as data"`, the latter has a couple of disadvantages:
+You can subscribe to an observable directly from the template using `*ngxSubscribe`. While you can achieve the same thing using `*ngIf="data$ | async as data"`,
+the latter has a couple of disadvantages:
 1. It fails if `data$` emits falsy values such as `0` or `null`.
 2. There is no way to access error or completion information of the observable.
 3. Rendering is deferred until the observable actually emits.
@@ -74,7 +75,8 @@ This can be particularly useful for showing loading and error state.
 </ul>
 ```
 
-Renders the given template as many times as specified. This is equivalent of using `*ngFor` on an array of that length, but avoids having to initialize such an array if you only know the number of items you want to render.
+Renders the given template as many times as specified. This is equivalent of using `*ngFor` on an array of that length, but avoids having to initialize such
+an array if you only know the number of items you want to render.
 
 You can also access similar context information as with `*ngFor`:
 
@@ -85,6 +87,17 @@ You can also access similar context information as with `*ngFor`:
     <p *ngIf="last">End</p>
 </ng-container>
 ```
+
+### *ngxAlias
+
+*TL;DR*
+
+```
+<ng-container *ngxAlias="data$ | async as data">{{ data }}</ng-container>
+```
+
+Simply renders the given template, but allows aliasing a complex expression to a local template input variable. This is similar to using `*ngIf` for the same job,
+but avoids the issues arising from falsy values which would cause the template not to render.
 
 ## Contributors ✨
 
