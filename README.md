@@ -25,15 +25,66 @@ TODO Installation instructions
 
 ### *ngxSubscribe
 
-TODO
+*TL;DR*
+
+```
+<ng-container *ngxSubscribe="data$; let value">
+    <!-- Note that this prints "null" until data$ emitted a value. -->
+    Emitted: {{ value }}
+</ng-container>
+```
+
+You can subscribe to an observable directly from the template using `*ngxSubscribe`. While you can achieve the same thing using `*ngIf="data$ | async as data"`, the latter has a couple of disadvantages:
+1. It fails if `data$` emits falsy values such as `0` or `null`.
+2. There is no way to access error or completion information of the observable.
+3. Rendering is deferred until the observable actually emits.
+
+With `*ngxSubscribe` all of these points are addressed. Through the template context you have access to all relevant information:
+
+```
+<ng-container *ngxSubscribe="data$; let value; error as error; errored as errored; count as count; completed as completed">
+    <p>Number of emitted values: {{ count }}</p>
+    <p *ngIf="count > 0">Last emitted value: {{ value }}</p>
+    <p *ngIf="errored">Error: {{ error }}</p>
+    <p *ngIf="completed">Completed</p>
+</ng-container>
+```
+
+By default, the template on which the directive is applied is used. However, you can also specify different templates for different scenarios:
+
+```
+<ng-container *ngxSubscribe="data$; then thenTemplate beforeAny pendingTemplate onError errorTemplate onCompleted completedTemplate">
+</ng-container>
+
+<ng-template #thenTemplate let-value>Value: {{ value }}</ng-template>
+<ng-template #pendingTemplate>Waiting for first emission…</ng-template>
+<ng-template #errorTemplate let-error="error">Error: {{ error }}</ng-template>
+<ng-template #completedTemplate>Completed</ng-template>
+```
+
+This can be particularly useful for showing loading and error state.
 
 ### *ngxRepeat
 
-TODO
+*TL;DR*
 
-### *ngxRange
+```
+<ul>
+    <li *ngxRepeat="42; let index">Item {{ index }}</li>
+</ul>
+```
 
-TODO
+Renders the given template as many times as specified. This is equivalent of using `*ngFor` on an array of that length, but avoids having to initialize such an array if you only know the number of items you want to render.
+
+You can also access similar context information as with `*ngFor`:
+
+```
+<ng-container *ngxRepeat="3; let index; count as count; first as first; last as last; even as even; odd as odd">
+    <p *ngIf="first">Start</p>
+    <p>Item {{ index }} of {{ count }} is even={{ even }}, odd={{ odd }}</p>
+    <p *ngIf="last">End</p>
+</ng-container>
+```
 
 ## Contributors ✨
 
