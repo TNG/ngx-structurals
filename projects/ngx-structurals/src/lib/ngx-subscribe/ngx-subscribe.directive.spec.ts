@@ -21,7 +21,7 @@ function setupComponent<T>(component: new(...args: any[]) => T, targetSelector: 
 describe('ngxSubscribe', () => {
     it('subscribes to the observable and shows the emitted value', async(() => {
         @Component({
-            template: `<div *ngxSubscribe="source$; let value">{{ value }}</div>`,
+            template: `<div *ngxSubscribe="let value of source$">{{ value }}</div>`,
         })
         class TestComponent {
             public source$ = of(42);
@@ -33,7 +33,7 @@ describe('ngxSubscribe', () => {
 
     it('updates as more values emit', async(() => {
         @Component({
-            template: `<div *ngxSubscribe="source$; let value">{{ value }}</div>`,
+            template: `<div *ngxSubscribe="let value of source$">{{ value }}</div>`,
         })
         class TestComponent {
             public source$ = new Subject<number>();
@@ -194,7 +194,7 @@ describe('ngxSubscribe', () => {
     it('resubscribes if the observable changes', async(async () => {
         @Component({
             template: `
-                <div *ngxSubscribe="source$; let value; let count = count; let errored = errored; let error = error">
+                <div *ngxSubscribe="let value of source$; let count = count; let errored = errored; let error = error">
                     {{ value }} | {{ count }} | {{ errored }} | {{ error }}
                 </div>
             `,

@@ -99,6 +99,16 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
     }
 
     /**
+     * See {@link NgxSubscribeDirective#ngxSubscribeOf}.
+     *
+     * @publicApi
+     */
+    @Input()
+    public set ngxSubscribe(source$: Observable<T>) {
+        this.ngxSubscribeOf = source$;
+    }
+
+    /**
      * Observable to subscribe to.
      *
      * This is the primary input for the {@code [ngxSubscribe]} directive and defines the observable which should be subscribed to.
@@ -106,7 +116,7 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * @publicApi
      */
     @Input()
-    public set ngxSubscribe(source$: Observable<T>) {
+    public set ngxSubscribeOf(source$: Observable<T>) {
         if (this.source$ === source$) {
             return;
         }

@@ -28,7 +28,7 @@ TODO Installation instructions
 *TL;DR*
 
 ```
-<ng-container *ngxSubscribe="data$; let value">
+<ng-container *ngxSubscribe="let data of data$">
     <!-- Note that this prints "null" until data$ emitted a value. -->
     Emitted: {{ value }}
 </ng-container>
@@ -43,7 +43,7 @@ the latter has a couple of disadvantages:
 With `*ngxSubscribe` all of these points are addressed. Through the template context you have access to all relevant information:
 
 ```
-<ng-container *ngxSubscribe="data$; let value; error as error; errored as errored; count as count; completed as completed">
+<ng-container *ngxSubscribe="let data of data$; error as error; errored as errored; count as count; completed as completed">
     <p>Number of emitted values: {{ count }}</p>
     <p *ngIf="count > 0">Last emitted value: {{ value }}</p>
     <p *ngIf="errored">Error: {{ error }}</p>
