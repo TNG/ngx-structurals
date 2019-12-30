@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/Airblader/ngx-structurals.svg?branch=master)](https://travis-ci.com/Airblader/ngx-structurals)
+[![Build Status](https://travis-ci.com/TNG/ngx-structurals.svg?branch=master)](https://travis-ci.com/TNG/ngx-structurals)
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-green.svg)](https://conventionalcommits.org)
 
@@ -119,4 +119,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 [MIT License][license]
 
-[license]: https://www.github.com/Airblader/ngx-structurals/blob/master/LICENSE
+[license]: https://www.github.com/TNG/ngx-structurals/blob/master/LICENSE
