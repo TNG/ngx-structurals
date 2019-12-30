@@ -13,7 +13,14 @@ which may be useful in any Angular project.
 
 ## How to get it?
 
-TODO Installation instructions
+Simply install ngx-structurals with the package manager of your choice:
+
+```
+npm install --save @tngtech/ngx-structurals
+yarn add @tngtech/ngx-structurals
+```
+
+You can now import `NgxStructuralsModule` into your application to get access to the directives.
 
 ## How to use it?
 
