@@ -1,6 +1,6 @@
 {
   "name": "@tngtech/ngx-structurals",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Structural utility directives for Angular",
   "author": "Ingo Bürk",
   "license": "MIT",
