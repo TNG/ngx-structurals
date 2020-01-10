@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@0.1.2...@tngtech/ngx-structurals@0.2.1) (2020-01-10)
+
+
+### Reverts
+
+* Revert "chore: manually bump" ([4881b2c](https://github.com/TNG/ngx-structurals/commit/4881b2c9c963796362ff84482a15731a659d0ca6))
+
+
+
+
+
 ## [0.1.2](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@0.1.1...@tngtech/ngx-structurals@0.1.2) (2020-01-10)
 
 **Note:** Version bump only for package @tngtech/ngx-structurals
