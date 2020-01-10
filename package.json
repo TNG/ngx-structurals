@@ -62,8 +62,5 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
