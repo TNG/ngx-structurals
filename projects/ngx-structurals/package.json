@@ -7,8 +7,7 @@
   "keywords": [
     "angular",
     "directive",
-    "structural-directive",
-    "web"
+    "structural-directive"
   ],
   "peerDependencies": {
     "@angular/common": "^7.0.0 || ^8.0.0",
