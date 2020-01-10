@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.0.0](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@0.3.1...@tngtech/ngx-structurals@1.0.0) (2020-01-10)
+
+
+### chore
+
+* ignore me… ([f2f5fde](https://github.com/TNG/ngx-structurals/commit/f2f5fde94bc86d9a2ffbd89e2290eefff9cd52b5))
+
+
+### BREAKING CHANGES
+
+* release 1.0
+
+Signed-off-by: Ingo Bürk <admin@airblader.de>
+
+
+
+
+
 ## [0.3.1](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@0.2.2...@tngtech/ngx-structurals@0.3.1) (2020-01-10)
 
 **Note:** Version bump only for package @tngtech/ngx-structurals
