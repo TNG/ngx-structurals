@@ -4,6 +4,7 @@ import { NgxRepeatDirective } from './ngx-repeat.directive';
 
 @NgModule({
     declarations: [NgxRepeatDirective],
+    exports: [NgxRepeatDirective],
     imports: [
         CommonModule
     ]
