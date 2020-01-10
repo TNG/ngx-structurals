@@ -20,10 +20,10 @@
     ],
     "paths": {
       "ngx-structurals": [
-        "dist/ngx-structurals"
+        "dist/@tngtech/ngx-structurals"
       ],
       "ngx-structurals/*": [
-        "dist/ngx-structurals/*"
+        "dist/@tngtech/ngx-structurals/*"
       ]
     }
   },
