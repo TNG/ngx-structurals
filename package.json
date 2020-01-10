@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "release": "lerna publish --contents dist",
     "test": "ng test --browsers=ChromeHeadless",
     "lint": "ng lint",
     "codecov": "codecov",
