@@ -6,7 +6,7 @@
   "command": {
     "publish": {
       "conventionalCommits": true,
-      "message": "release: new release"
+      "message": "chore: new release"
     },
     "version": {
       "push": false
