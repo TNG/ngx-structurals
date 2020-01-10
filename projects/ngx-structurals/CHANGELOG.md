@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@0.2.1...@tngtech/ngx-structurals@0.2.2) (2020-01-10)
+
+
+### Bug Fixes
+
+* export directives ([d071387](https://github.com/TNG/ngx-structurals/commit/d0713870ec2a1c88d3757ac2935389d1d6e8f0a4))
+
+
+
+
+
 ## [0.2.1](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@0.1.2...@tngtech/ngx-structurals@0.2.1) (2020-01-10)
 
 
