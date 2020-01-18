@@ -2,8 +2,14 @@
   "name": "@tngtech/ngx-structurals",
   "version": "1.0.0",
   "description": "Structural utility directives for Angular",
+  "homepage": "https://www.github.com/TNG/ngx-structurals",
   "author": "Ingo Bürk",
   "license": "MIT",
+  "bugs": "https://www.github.com/TNG/ngx-structurals/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/TNG/ngx-structurals"
+  },
   "keywords": [
     "angular",
     "directive",
