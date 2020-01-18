@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@1.0.0...@tngtech/ngx-structurals@1.0.1) (2020-01-18)
+
+**Note:** Version bump only for package @tngtech/ngx-structurals
+
+
+
+
+
 # [1.0.0](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@0.3.1...@tngtech/ngx-structurals@1.0.0) (2020-01-10)
 
 
