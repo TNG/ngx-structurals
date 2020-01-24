@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@1.0.1...@tngtech/ngx-structurals@1.1.0) (2020-01-24)
+
+
+### Features
+
+* support Angular 9 ([1eecffa](https://github.com/TNG/ngx-structurals/commit/1eecffa7a0df321ee62dc6a3ffe971c203be9323)), closes [#11](https://github.com/TNG/ngx-structurals/issues/11)
+
+
+
+
+
 ## [1.0.1](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@1.0.0...@tngtech/ngx-structurals@1.0.1) (2020-01-18)
 
 **Note:** Version bump only for package @tngtech/ngx-structurals
