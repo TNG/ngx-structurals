@@ -104,7 +104,15 @@ export class NgxSubscribeDirective<T> implements OnDestroy {
      * @publicApi
      */
     @Input()
-    public set ngxSubscribe(source$: Observable<T>) {
+    public set ngxSubscribe(source$: Observable<T> | string) {
+        if (typeof source$ === 'string') {
+            // When using *ngxSubscribe="let value of source$" the compile desuggars this to include ngxSubscribe="".
+            // With Ivy's stricter template type-checking this will cause a typing error. Therefore, we do allow
+            // this input to be a string to make the type-checker happy, and simply do nothing if a string was
+            // passed as the ngxSubscribeOf input will be used instead.
+            return;
+        }
+
         this.ngxSubscribeOf = source$;
     }
 
