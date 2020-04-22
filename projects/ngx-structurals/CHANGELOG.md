@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.1](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@1.1.0...@tngtech/ngx-structurals@1.1.1) (2020-04-22)
+
+
+### Bug Fixes
+
+* **ngx-subscribe:** ensure Ivy's type-checker is happy ([a87aa08](https://github.com/TNG/ngx-structurals/commit/a87aa08d47530ba8066cde9abd61b60a8f402e05))
+
+
+
+
+
 # [1.1.0](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@1.0.1...@tngtech/ngx-structurals@1.1.0) (2020-01-24)
 
 
