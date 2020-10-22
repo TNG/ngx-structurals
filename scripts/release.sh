@@ -4,7 +4,7 @@ set -e -o pipefail
 
 rm -rf dist/ngx-structurals
 lerna version
-ng build ngx-structurals
+ng build --prod ngx-structurals
 
 cp README.md dist/ngx-structurals
 cp LICENSE dist/ngx-structurals
