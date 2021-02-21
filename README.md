@@ -112,10 +112,16 @@ but avoids the issues arising from falsy values which would cause the template n
 *TL;DR*
 
 ```
-<ng-template #sampleTemplate [ngxTemplateContext]="context" let-data>{{ data.prop }}</ng-template>
+<ng-template [ngxTemplateContext]="context" let-data>{{ data.prop }}</ng-template>
 ```
 
-Simply defines the given template, but uses the type of the given variable as template context.
+Defines the type of the context based on some object. This utility is a workaround for [#28731](https://github.com/angular/angular/issues/28731) as the context of a template is untyped. The context passed into it is some (possibly empty) object with the appropriate type, e.g.
+
+```
+context?: MyContextType;
+```
+
+Note that this directive only types the context of the directive, but cannot enforce that the context passed to the template actually matches that type.
 
 ## Contributors ✨
 
