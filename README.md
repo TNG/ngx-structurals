@@ -134,6 +134,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/Airblader"><img src="https://avatars3.githubusercontent.com/u/2392216?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ingo Bürk</b></sub></a><br /><a href="https://github.com/TNG/ngx-structurals/commits?author=Airblader" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/kentkwee"><img src="https://avatars.githubusercontent.com/u/79371980?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kentkwee</b></sub></a><br /><a href="https://github.com/TNG/ngx-structurals/commits?author=kentkwee" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/snebjorn"><img src="https://avatars.githubusercontent.com/u/1266245?v=4?s=100" width="100px;" alt=""/><br /><sub><b>snebjorn</b></sub></a><br /><a href="https://github.com/TNG/ngx-structurals/issues?q=author%3Asnebjorn" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
