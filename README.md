@@ -28,6 +28,7 @@ You can now import `NgxStructuralsModule` into your application to get access to
    * [*ngxSubscribe](#ngxSubscribe)
    * [*ngxRepeat](#ngxRepeat)
    * [*ngxAlias](#ngxAlias)
+   * [ngxTemplateContext](#ngxTemplateContext)
 <!--te-->
 
 ### *ngxSubscribe
@@ -105,6 +106,16 @@ You can also access similar context information as with `*ngFor`:
 
 Simply renders the given template, but allows aliasing a complex expression to a local template input variable. This is similar to using `*ngIf` for the same job,
 but avoids the issues arising from falsy values which would cause the template not to render.
+
+### ngxTemplateContext
+
+*TL;DR*
+
+```
+<ng-template #sampleTemplate [ngxTemplateContext]="context" let-data>{{ data.prop }}</ng-template>
+```
+
+Simply defines the given template, but uses the type of the given variable as template context.
 
 ## Contributors ✨
 
