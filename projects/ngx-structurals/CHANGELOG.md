@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@1.1.3...@tngtech/ngx-structurals@1.2.0) (2021-02-21)
+
+
+### Features
+
+* add ngxTemplateDirective for providing context in ng-template body tags ([5578c10](https://github.com/TNG/ngx-structurals/commit/5578c1037536ac3bc47cd43ee7a45927abbc0226))
+
+
+
+
+
 ## [1.1.3](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@1.1.2...@tngtech/ngx-structurals@1.1.3) (2020-10-22)
 
 **Note:** Version bump only for package @tngtech/ngx-structurals
