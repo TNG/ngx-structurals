@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.1](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@1.2.0...@tngtech/ngx-structurals@1.2.1) (2021-02-23)
+
+
+### Bug Fixes
+
+* **ngx-alias:** fixes incorrect `T | null` in AsyncPipe bool comparison ([463f04b](https://github.com/TNG/ngx-structurals/commit/463f04b5ee4efb1afaaed96cb5d9d2f721ad8d1d)), closes [#37](https://github.com/TNG/ngx-structurals/issues/37)
+
+
+
+
+
 # [1.2.0](https://github.com/TNG/ngx-structurals/compare/@tngtech/ngx-structurals@1.1.3...@tngtech/ngx-structurals@1.2.0) (2021-02-21)
 
 
