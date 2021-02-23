@@ -13,14 +13,15 @@ export class NgxAliasContext<T> {
      *
      * @publicApi
      */
-    public ngxAlias: T | null = null;
+    // tslint:disable-next-line: no-non-null-assertion justification https://github.com/angular/vscode-ng-language-service/issues/1137
+    public ngxAlias: T = null!;
 
     /**
      * Synonym for {@link ngxAlias}.
      *
      * @publicApi
      */
-    public get $implicit(): T | null {
+    public get $implicit(): T {
         return this.ngxAlias;
     }
 }
